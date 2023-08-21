@@ -33,3 +33,40 @@ void execute_command(char *command)
         wait(NULL);
     }
 }
+
+int main()
+{
+    char *input = NULL;
+    size_t len = 0;
+    ssize_t read_len;
+
+    while (1)
+    {
+        printf("#cisfun$ ");
+        read_len = getline(&input, &len, stdin);
+
+        if (read_len == -1)
+        {
+            if (feof(stdin))
+            {
+                printf("\n");
+                break;
+            }
+            else
+            {
+                perror("getline");
+                exit(1);
+            }
+        }
+
+        if (input[read_len - 1] == '\n')
+        {
+            input[read_len - 1] = '\0'; /* Remove the newline character */
+        }
+
+        execute_command(input);
+    }
+
+    free(input);
+    return 0;
+}

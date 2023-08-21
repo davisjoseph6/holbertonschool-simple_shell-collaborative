@@ -9,29 +9,27 @@
 
 void execute_command(char *command)
 {
-    pid_t pid = fork();
+        pid_t pid = fork();
 
-    if (pid == -1)
-    {
-        perror("fork");
-    }
-    else if (pid == 0)
-    {
-        /* Child process */
-        char *args[4];
-        args[0] = "sh";
-        args[1] = "-c";
-        args[2] = command;
-        args[3] = NULL;
-        execvp("sh", args);
-        perror("./shell");
-        _exit(1);
-    }
-    else
-    {
-        /* Parent process */
-        wait(NULL);
-    }
+        if (pid == -1)
+        {
+                perror("fork");
+        }
+        else if (pid == 0)
+        {
+                /* Child process */
+                char *args[2];
+                args[0] = command;
+                args[1] = NULL;
+                execve(command, args, NULL);
+                perror("./shell");
+                _exit(1);
+        }
+        else
+        {
+                /* Parent process */
+                wait(NULL);
+        }
 }
 
 int main()

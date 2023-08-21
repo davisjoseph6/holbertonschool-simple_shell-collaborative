@@ -8,14 +8,6 @@
 
 #define MAX_INPUT_LENGTH 1024
 
-void display_env_vars() {
-    extern char **environ;
-    char **env;
-    for (env = environ; *env != NULL; env++) {
-        printf("%s\n", *env);
-    }
-}
-
 int main() {
     char *input = NULL;
     size_t len = 0;
@@ -39,11 +31,7 @@ int main() {
             input[read_len - 1] = '\0'; /* Remove the newline character */
         }
 
-        if (strcmp(input, "env") == 0) {
-            display_env_vars();
-        } else {
-            execute_command(input);
-        }
+        execute_command(input);
     }
 
     free(input);

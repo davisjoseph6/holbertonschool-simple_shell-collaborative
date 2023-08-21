@@ -4,9 +4,35 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include "main.h"
 
 #define MAX_INPUT_LENGTH 1024
+
+void execute_command(char *command) {
+    pid_t pid = fork();
+
+    if (pid == -1) {
+        perror("fork");
+    } else if (pid == 0) {
+        /* Child process */
+        char *args[2];
+        args[0] = command;
+        args[1] = NULL;
+        execve(command, args, NULL);
+        perror("./shell");
+        _exit(1);
+    } else {
+        /* Parent process */
+        wait(NULL);
+    }
+}
+
+void display_env_vars() {
+    extern char **environ;
+    char **env;
+    for (env = environ; *env != NULL; env++) {
+        printf("%s\n", *env);
+    }
+}
 
 int main() {
     char *input = NULL;
@@ -31,9 +57,14 @@ int main() {
             input[read_len - 1] = '\0'; /* Remove the newline character */
         }
 
-        execute_command(input);
+        if (strcmp(input, "env") == 0) {
+            display_env_vars();
+        } else {
+            execute_command(input);
+        }
     }
 
     free(input);
     return 0;
 }
+

@@ -1,6 +1,6 @@
 #  C - Simple Shell
 
-<div style="text-align:center"><img src="https://github.com/powerofcode2023/holbertonschool-printf/assets/135613629/65fb187e-0ae0-42a8-a548-e8f2cb25e92f" /></div>>
+<div style="text-align:center"><img src="https://github.com/powerofcode2023/holbertonschool-printf/assets/135613629/65fb187e-0ae0-42a8-a548-e8f2cb25e92f" /></div>
 
 ##  Requirements
 *   Allowed editors: `vi`, `vim`, `emacs`.

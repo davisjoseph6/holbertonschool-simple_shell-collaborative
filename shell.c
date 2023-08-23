@@ -8,7 +8,7 @@
  * Return: 0
  */
 int main(int argc, char **argv, char **env)
-i{
+{
 	char *prompt = "##---> ";
 	char *line = NULL;
 	char **args = NULL;

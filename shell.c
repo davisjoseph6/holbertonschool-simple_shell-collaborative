@@ -8,8 +8,8 @@
  * Return: 0
  */
 int main(int argc, char **argv, char **env)
-{
-	char *prompt = "shell2023";
+i{
+	char *prompt = "##---> ";
 	char *line = NULL;
 	char **args = NULL;
 	int i = 0, status = 0, arg_num = 0;

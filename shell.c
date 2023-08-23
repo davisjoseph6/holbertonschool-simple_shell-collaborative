@@ -25,7 +25,7 @@ int main(int argc, char **argv, char **env)
 
 		read = getline(&line, &len, stdin);
 		++tally;
-		if (special_char(line, read, &exit_stat) == 0)
+		if (special_char(line, read, &exit_stat) == 127)
 			continue;
 
 		no_nl(line);

@@ -55,7 +55,7 @@ int  special_char(char *buffer, ssize_t bytes, int *ex_st)
 
 	if (bytes == EOF && isatty(STDIN_FILENO) == 1)
 	{
-		_putchar('\n');
+		putchar('\n');
 		free(buffer);
 		exit(*ex_st);
 	}
@@ -66,7 +66,7 @@ int  special_char(char *buffer, ssize_t bytes, int *ex_st)
 		exit(*ex_st);
 	}
 
-	if (_strcmp(buffer, "\n") == 0)
+	if (strcmp(buffer, "\n") == 0)
 	{
 		*ex_st = 0;
 		return (127);

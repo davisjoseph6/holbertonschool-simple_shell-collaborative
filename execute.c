@@ -26,7 +26,7 @@ void _execute(int status, char **args, int *ex_st, int *tal)
 			print_int(tal);
 			print_str(": ");
 			perror(args[0]);
-			*ex_st = 127;
+			*ex_st = 0;
 		}
 		else if (access(args[0], F_OK) == 0 &&
 			 access(args[0], X_OK) != 0)

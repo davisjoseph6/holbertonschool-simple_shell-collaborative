@@ -1,15 +1,5 @@
 #include "main.h"
 
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- * Return: On success 1. On error, -1 is returned..
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
 
 /**
  * print_str - prints string
@@ -44,8 +34,8 @@ char *pathstr(char *right, char *first)
 	int token_len = 0, first_len = 0;
 
 	token = right;
-	token_len = _strlen(token);
-	first_len = _strlen(first);
+	token_len = strlen(token);
+	first_len = strlen(first);
 
 	new = malloc((token_len + first_len + 2) * sizeof(char));
 	if (new == NULL)
@@ -53,10 +43,10 @@ char *pathstr(char *right, char *first)
 
 	new[0] = '\0';
 
-	_strcat(new, right);
-	_strcat(new, "/");
-	_strcat(new, first);
-	_strcat(new, "\0");
+	strcat(new, right);
+	strcat(new, "/");
+	strcat(new, first);
+	strcat(new, "\0");
 
 	return (new);
 }
@@ -86,7 +76,7 @@ void print_int(int *tally)
 	for (j = 0; j < length -  1; j++)
 		base = base * 10;
 
-	_putchar('0' + (max / base));
+	putchar('0' + (max / base));
 
 	if (length > 1)
 	{
@@ -94,9 +84,9 @@ void print_int(int *tally)
 		{
 			base /= 10;
 			d = max / base;
-			_putchar('0' + d % 10);
+			putchar('0' + d % 10);
 		}
-		_putchar('0' + (max % 10));
+		putchar('0' + (max % 10));
 	}
 }
 
@@ -119,7 +109,7 @@ char **parser(char *l)
 
 	int arg_num = 0, i = 0;
 
-	linecopy = _strdup(l);
+	linecopy = strdup(l);
 	parsed = strtok(linecopy, " \t");
 
 	while (parsed != NULL)

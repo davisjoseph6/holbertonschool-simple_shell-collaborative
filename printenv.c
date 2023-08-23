@@ -16,6 +16,6 @@ int printenv(char **env, int *ex_st)
 		putchar('\n');
 		i++;
 	}
-	*ex_st = 2;
+	*ex_st = 0;
 	return (EXIT_SUCCESS);
 }

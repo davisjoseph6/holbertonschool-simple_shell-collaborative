@@ -25,16 +25,7 @@ void builtins(char *line, char **args, char **env, int *ex_st);
 void _execute(int status, char **args, int *ex_st, int *tal);
 
 
-/* strings.c: functions related to strings */
-int _strlen(char *s);
-char *_strdup(char *str);
-int _strcmp(char *s1, char *s2);
-char *_strcpy(char *dest, char *src);
-char *_strcat(char *dest, char *src);
-
-
 /* printf.c: functions related to printing strings/characters/numbers */
-int _putchar(char c);
 void print_str(char *s);
 char *pathstr(char *right, char *first);
 char **parser(char *l);

@@ -16,11 +16,11 @@ int _path(char *first, char **input, char **env, int *ex_st)
 
 	for (i = 0; env[i] != NULL; i++)
 	{
-		envcopy = _strdup(env[i]);
+		envcopy = strdup(env[i]);
 		left = strtok(envcopy, "= \t");
 		temp = strtok(NULL, "= \t");
 
-		if (_strcmp(left, "PATH") == 0)
+		if (strcmp(left, "PATH") == 0)
 		{
 			right = strtok(temp, ": \t");
 			while (right)

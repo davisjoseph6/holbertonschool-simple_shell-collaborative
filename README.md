@@ -1,4 +1,5 @@
 #  C - Simple Shell
+<div style="text-align:center"><img src="https://zupimages.net/up/23/34/a0ga.png" /></div>
 
 ##  Requirements
 *   Allowed editors: `vi`, `vim`, `emacs`.

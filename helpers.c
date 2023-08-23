@@ -69,7 +69,7 @@ int  special_char(char *buffer, ssize_t bytes, int *ex_st)
 	if (strcmp(buffer, "\n") == 0)
 	{
 		*ex_st = 0;
-		return (127);
+		return (0);
 	}
 
 	while (buffer[i] != '\n')

@@ -35,7 +35,7 @@ void _execute(int status, char **args, int *ex_st, int *tal)
 			print_int(tal);
 			print_str(": ");
 			perror(args[0]);
-			*ex_st = 126;
+			*ex_st = 2;
 		}
 	}
 	free(args);

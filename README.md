@@ -53,6 +53,10 @@ Your code will be compiled this way:
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
 
+## Flowchart
+
+<div style="text-align:center"><img src="https://zupimages.net/up/23/34/lztb.png" width=60% height=60% /></div>
+
 ## Authors
 * [**Abdelkader AOUAR**](https://github.com/powerofcode2023)
 * [**Davis JOSEPH**](https://github.com/davisjoseph6)

@@ -55,7 +55,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 ## Flowchart
 
-<div style="text-align:center"><img src="https://zupimages.net/up/23/34/dunb.png" width=80% height=80% /></div>
+<div style="text-align:center"><img src="https://zupimages.net/up/23/34/y6ap.png" width=80% height=80% /></div>
 
 ## Authors
 * [**Abdelkader AOUAR**](https://github.com/powerofcode2023)
